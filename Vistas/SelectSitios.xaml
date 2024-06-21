@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E163.Vistas.SelectSitios"
+             xmlns:conver="clr-namespace:PM2E163.Controles"
+             Title="SITIOS">
+    <ContentPage.Resources>
+        <conver:Base64Image x:Key="BaseArray"></conver:Base64Image>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+
+        <ScrollView MaximumHeightRequest="500">
+            <CollectionView ItemsSource="{Binding Items}" SelectionMode="Single" SelectionChanged="OnTapped">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" HorizontalOptions="Start" Margin="4" x:Name="foto" HeightRequest="60" WidthRequest="60" Aspect="Fill" Source="{Binding Imagen, Converter={StaticResource BaseArray}}"></Image>
+                                <Label Grid.Column="1" Text="{Binding descripcion}" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"></Label>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Margin="30,20,0,0" x:Name="btnActualizar"  Text="ACTUALIZAR" VerticalOptions="Start" HorizontalOptions="Start" Clicked="btnActualizar_Clicked" WidthRequest="160" BackgroundColor="DarkSeaGreen" />
+            <Button Grid.Column="1" Grid.Row="0" Margin="10,20,0,0" x:Name="btnEliminar"  Text="ELIMINAR" VerticalOptions="Start" HorizontalOptions="Start" Clicked="btnEliminar_Clicked" WidthRequest="160" BackgroundColor="DarkSeaGreen"/>
+            <Button Grid.Column="0" Grid.Row="1" Margin="100,20,0,0" x:Name="btnVerMapa"  Text="VER MAPA" VerticalOptions="Start" HorizontalOptions="Start" Clicked="btnVerMapa_Clicked" WidthRequest="200" BackgroundColor="DarkSeaGreen"/>
+    
+        </Grid>
+
+        <Label TextColor="LightSlateGray" Text="@HeibyBarahona" FontSize="10" Margin="270,470,0,0" HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

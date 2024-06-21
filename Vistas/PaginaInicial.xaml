@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E163.Vistas.PaginaInicial"
+             Title="INICIO">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Source="logo.png" WidthRequest="80"/>
+            <Label Grid.Row="0" Grid.Column="1" TextColor="Black" Margin="-35,0,0,0" Text="SITE VISITOR APP" FontAttributes="Bold" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"/>
+        </Grid>
+
+        <Label TextColor="Black" Text="Imagen Sitio Visitado"  FontAttributes="Bold" FontSize="17" HorizontalOptions="Center" Margin="0,20,0,0"/>
+        <Image x:Name="foto" Source="capturar.jpg" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Start" Margin="10"/>
+        <Button Text="CAPTURAR FOTOGRAFÍA" x:Name="btnFoto" WidthRequest="200" Clicked="btnFoto_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Margin="3,3,3,3" BackgroundColor="DarkSeaGreen"></Button>
+
+
+        <Label TextColor="Black" Text="Latitud" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtLatitud" TextColor="Green" HorizontalOptions="Center" IsEnabled="False"/>
+
+
+        <Label TextColor="Black" Text="Longitud" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtLongitud" TextColor="Green" HorizontalOptions="Center" IsEnabled="False"/>
+
+        <Label TextColor="Black" Text="Descripción:" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtDescripcion" Placeholder="Ej: Tegucigalpa,FM" Keyboard="Text" HorizontalOptions="Center"/>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button x:Name="btnAgregar" Margin="30,20,0,0" WidthRequest="170" Grid.Column="0" Text="AGREGAR" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnAgregar_Clicked" BackgroundColor="DarkSeaGreen"/>
+            <Button x:Name="btnLista" Grid.Column="1" WidthRequest="170" Text="LISTA SITIOS" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnLista_Clicked" Margin="-30,20,0,0" BackgroundColor="DarkSeaGreen"/>
+        </Grid>
+        <Button x:Name="btnSalir"  Margin="100,20,0,0" WidthRequest="200" Text="SALIR APP" VerticalOptions="Start" HorizontalOptions="Start" Clicked="btnSalir_Clicked" BackgroundColor="DarkSeaGreen" />
+
+
+        <Label TextColor="LightSlateGray" Text="@HeibyBarahona" FontSize="10" Margin="270,90,0,0" HorizontalOptions="Center"/>
+
+    </StackLayout>
+</ContentPage>

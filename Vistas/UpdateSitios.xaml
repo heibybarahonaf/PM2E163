@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E163.Vistas.UpdateSitios"
+             Title="ACTUALIZAR"
+             xmlns:conver="clr-namespace:PM2E163.Controles">
+    <ContentPage.Resources>
+        <conver:Base64Image x:Key="BaseArray"></conver:Base64Image>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Source="logo.png" WidthRequest="80"/>
+            <Label Grid.Row="0" Grid.Column="1" TextColor="Black" Margin="-35,0,0,0"  Text="SITE VISITOR APP" FontAttributes="Bold" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"/>
+        </Grid>
+        
+        <Entry x:Name="txtUpOculto" Text="{Binding id}" IsVisible="false"/>
+        <Image x:Name="foto" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Start" Margin="10" Source="{Binding Imagen, Converter={StaticResource BaseArray}}" ></Image>
+        <Button Text="Tomar Fotografía" x:Name="btnFotoAct" WidthRequest="150" Clicked="btnFotoAct_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Margin="3,3,3,3" BackgroundColor="DarkSeaGreen"></Button>
+
+        <Label TextColor="Black" Text="Latitud" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtLatitud" TextColor="Green" HorizontalOptions="Center" IsEnabled="False"/>
+
+        <Label TextColor="Black" Text="Longitud" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtLongitud" TextColor="Green" HorizontalOptions="Center" IsEnabled="False"/>
+
+        <Label TextColor="Black" Text="Descripción:" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center"/>
+        <Entry x:Name="txtDescripcion" HorizontalOptions="Center" Text="{Binding descripcion}"/>
+
+        <Button x:Name="btnActualizar" Text="Actualizar" VerticalOptions="Center" WidthRequest="150" HorizontalOptions="Center" Clicked="btnActualizar_Clicked" Margin="3,3,3,3" BackgroundColor="DarkSeaGreen"/>
+
+        <Label TextColor="LightSlateGray" Text="@HeibyBarahona" FontSize="10" Margin="270,210,0,0" HorizontalOptions="Center"/>
+
+    </StackLayout>
+</ContentPage>
